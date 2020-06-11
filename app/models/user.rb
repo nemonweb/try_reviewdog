@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   def test
-    "sdfsdf"
+    'sdfsdf'
   end
 end
