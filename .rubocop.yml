@@ -1,0 +1,59 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - bin/*
+    - tmp/**/*
+  TargetRubyVersion: 2.5
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - draw
+    - namespace
+    - resources
+    - shared_examples
+    - shared_examples_for
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/LineLength:
+  Max: 120
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_shipment
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/requests/**/*
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
